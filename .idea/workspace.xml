@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6e68afb0-ac1c-4d47-ab89-3589550545f8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Block/Adminhtml/Form/Information.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Block/Adminhtml/Form/Information.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Block/Adminhtml/Renderer/Actions.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Block/Adminhtml/Renderer/Actions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Block/Adminhtml/Sales/Order/Grid.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Block/Adminhtml/Sales/Order/Grid.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Block/Adminhtml/Sales/Order/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Block/Adminhtml/Sales/Order/View.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Block/Adminhtml/Sales/Order/View/Tab/Nfe.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Block/Adminhtml/Sales/Order/View/Tab/Nfe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Block/Adminhtml/System/Config/Form/Field/Nfeout.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Block/Adminhtml/System/Config/Form/Field/Nfeout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Block/Adminhtml/System/Config/Form/Field/Order/Status.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Block/Adminhtml/System/Config/Form/Field/Order/Status.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Block/Adminhtml/System/Config/Form/Field/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Block/Adminhtml/System/Config/Form/Field/Payment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Block/Adminhtml/System/Config/Form/Field/Payment/Allmethods.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Block/Adminhtml/System/Config/Form/Field/Payment/Allmethods.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Block/Adminhtml/System/Config/Form/Field/Shipping.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Block/Adminhtml/System/Config/Form/Field/Shipping.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Block/Adminhtml/System/Config/Form/Field/Shipping/AllGenericMethods.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Block/Adminhtml/System/Config/Form/Field/Shipping/AllGenericMethods.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Block/Adminhtml/System/Config/Form/Field/Shipping/Allmethods.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Block/Adminhtml/System/Config/Form/Field/Shipping/Allmethods.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Block/Adminhtml/System/Config/Form/Field/Tracking.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Block/Adminhtml/System/Config/Form/Field/Tracking.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Block/Adminhtml/System/Config/Form/Field/TrackingOrig.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Block/Adminhtml/System/Config/Form/Field/TrackingOrig.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Helper/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Helper/Data.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Model/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Model/Cron.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Cron.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Model/Nfe.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Nfe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Model/Observer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Observer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Model/Resource/Abstract.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Resource/Abstract.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Model/Resource/Collection/Abstract.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Resource/Collection/Abstract.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Model/Resource/Nfe.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Resource/Nfe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Model/Resource/Nfe/Collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Resource/Nfe/Collection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Model/Resource/Setup.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Resource/Setup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Model/Service/Nfe.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Nfe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Model/Service/Nfe/Out.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Nfe/Out.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Model/Service/Nfe/OutToXml.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Nfe/OutToXml.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Model/Service/NfeToXml.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/NfeToXml.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Model/Service/Payment/MappedConfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Payment/MappedConfig.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Model/Service/Payment/MercadopagoBoleto.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Payment/MercadopagoBoleto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Model/Service/Payment/MercadopagoCc.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Payment/MercadopagoCc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Model/Service/Payment/PagseguroBoleto.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Payment/PagseguroBoleto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Model/Service/Payment/PagseguroCc.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Payment/PagseguroCc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Model/Service/Payment/PaymentMethod.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Payment/PaymentMethod.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Model/Service/Payment/PayuBoleto.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Payment/PayuBoleto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Model/Service/Payment/PayuCc.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Payment/PayuCc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Model/Service/Payment/Proxy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Payment/Proxy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Model/Shipment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Shipment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Model/System/Config/Source/CarrierToTrack.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/System/Config/Source/CarrierToTrack.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Model/System/Config/Source/ProductId.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/System/Config/Source/ProductId.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Model/System/Config/Source/Timer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/System/Config/Source/Timer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/Result.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Result.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/controllers/Adminhtml/NfeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/controllers/Adminhtml/NfeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/etc/adminhtml.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/etc/adminhtml.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/etc/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/etc/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/etc/system.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/etc/system.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/sql/eloom_bling_setup/mysql4-install-1.0.0.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/sql/eloom_blingv3_setup/mysql4-install-1.0.0.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/Bling/sql/eloom_bling_setup/mysql4-upgrade-1.0.0-1.0.1.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/sql/eloom_blingv3_setup/mysql4-upgrade-1.0.0-1.0.1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/adminhtml/default/default/layout/eloom/bling.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/adminhtml/default/default/layout/eloom/bling_v3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/adminhtml/default/default/template/eloom/bling/form/information.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/adminhtml/default/default/template/eloom/bling_v3/form/information.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/adminhtml/default/default/template/eloom/bling/system/config/form/field/array.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/adminhtml/default/default/template/eloom/bling_v3/system/config/form/field/array.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/etc/modules/Eloom_Bling.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/etc/modules/Eloom_BlingV3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/locale/pt_BR/Eloom_Bling.csv" beforeDir="false" afterPath="$PROJECT_DIR$/app/locale/pt_BR/Eloom_BlingV3.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-Eloom_Bling.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build-Eloom_BlingV3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-desenv.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-desenv.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ioncube/ioncube_encoder_55.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ioncube/ioncube_encoder_56.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ioncube/licenca.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Eloom/Bling/Enum/BaseEnum.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Eloom/Bling/Enum/Enum.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Eloom/Bling/Enum/Finalidade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Eloom/Bling/Enum/TipoNota.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Eloom/Bling/Enum/TipoPessoa.php" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" notifyAboutMissingVendor="false" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/usr/bin/php" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="1YtkcguZdEPD08Zwse28yqJAaPa" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/rodrigo/Documents/Projetos/Magento/custom/bling-v3-magento-ce&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/controllers" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PS-241.18034.69" />
+        <option value="bundled-php-predefined-ba97393d7c68-48a1a656d44e-com.jetbrains.php.sharedIndexes-PS-241.18034.69" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6e68afb0-ac1c-4d47-ab89-3589550545f8" name="Default Changelist" comment="" />
+      <created>1540913522912</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1540913522912</updated>
+      <workItem from="1540913524204" duration="997000" />
+      <workItem from="1540927388396" duration="142000" />
+      <workItem from="1543087751441" duration="1569000" />
+      <workItem from="1545252634587" duration="482000" />
+      <workItem from="1546465041406" duration="433000" />
+      <workItem from="1546553773580" duration="112000" />
+      <workItem from="1548280818019" duration="628000" />
+      <workItem from="1548293842110" duration="769000" />
+      <workItem from="1548858744852" duration="619000" />
+      <workItem from="1551984732513" duration="208000" />
+      <workItem from="1552773444927" duration="974000" />
+      <workItem from="1552942918627" duration="48000" />
+      <workItem from="1555938565459" duration="455000" />
+      <workItem from="1557241400038" duration="337000" />
+      <workItem from="1557272733738" duration="44000" />
+      <workItem from="1559083653988" duration="227000" />
+      <workItem from="1583769361304" duration="27000" />
+      <workItem from="1586206232060" duration="870000" />
+      <workItem from="1586311261317" duration="621000" />
+      <workItem from="1586361336681" duration="2102000" />
+      <workItem from="1586367753577" duration="58000" />
+      <workItem from="1586890956854" duration="1584000" />
+      <workItem from="1587400576179" duration="2081000" />
+      <workItem from="1588701752614" duration="434000" />
+      <workItem from="1588702419002" duration="2204000" />
+      <workItem from="1591578895145" duration="524000" />
+      <workItem from="1591735834087" duration="29000" />
+      <workItem from="1591735934659" duration="22000" />
+      <workItem from="1593546047108" duration="3308000" />
+      <workItem from="1596476782075" duration="107000" />
+      <workItem from="1719945292423" duration="611000" />
+      <workItem from="1719946013902" duration="2121000" />
+      <workItem from="1719952387095" duration="1656000" />
+      <workItem from="1720019576767" duration="819000" />
+      <workItem from="1720026891052" duration="2213000" />
+      <workItem from="1720030628367" duration="958000" />
+      <workItem from="1720555403423" duration="930000" />
+      <workItem from="1720635082181" duration="4799000" />
+      <workItem from="1720716496290" duration="17000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.md" />
+  </component>
+</project>
