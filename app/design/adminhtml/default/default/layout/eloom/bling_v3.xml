@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<adminhtml_sales_order_view>
+		<reference name="sales_order_tabs">
+			<action method="addTab" ifconfig="eloom_blingv3/general/active">
+				<name>bling_nfe</name>
+				<block>eloom_blingv3/adminhtml_sales_order_view_tab_nfe</block>
+			</action>
+		</reference>
+	</adminhtml_sales_order_view>
+</layout>

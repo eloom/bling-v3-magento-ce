@@ -1,0 +1,17 @@
+{
+    "name": "eloom/bling-v3-magento-ce",
+    "description": "Magento 1 module to connect to Bling V3",
+    "type": "magento-module",
+    "homepage": "https://bitbucket.org/rodrigosanders/bling-v3/src/master/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "elOOm",
+            "email": "suporte@eloom.com.br"
+        }
+    ],
+    "require": {
+        "php": "~7.3",
+        "eloom/sdk-bling-php": "~1.0"
+    }
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<config>
+	<menu>
+		<eloom>
+			<children>
+				<eloom_blingv3 translate="title" module="eloom_blingv3">
+					<title>Bling ERP - V3</title>
+					<sort_order>101</sort_order>
+					<action>adminhtml/system_config/edit/section/eloom_blingv3</action>
+				</eloom_blingv3>
+			</children>
+		</eloom>
+	</menu>
+
+	<acl>
+		<resources>
+			<admin>
+				<children>
+					<eloom>
+						<children>
+							<eloom_blingv3 translate="title" module="eloom_blingv3">
+								<title>Bling ERP - V3</title>
+								<sort_order>101</sort_order>
+							</eloom_blingv3>
+						</children>
+					</eloom>
+
+					<system>
+						<children>
+							<config>
+								<children>
+									<eloom_blingv3 translate="title" module="eloom_blingv3">
+										<title>Bling ERP - V3</title>
+										<sort_order>101</sort_order>
+									</eloom_blingv3>
+								</children>
+							</config>
+						</children>
+					</system>
+				</children>
+			</admin>
+		</resources>
+	</acl>
+</config>

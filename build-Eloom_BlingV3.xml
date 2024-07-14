@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Modulo Bling" basedir=".">
+	<property file="${basedir}/build.properties"/>
+
+	<echo>--------------------------------Modulo Bling--------------------------------</echo>
+
+	<target name="instalar">
+		<ant antfile="build.xml" target="_copiar-modulo">
+			<property name="ambiente" value="${ambiente}"/>
+			<property name="diretorios" value="${diretorios.Bling}"/>
+			<property name="arquivos" value="${arquivos.Bling}"/>
+		</ant>
+	</target>
+
+	<target name="remover">
+		<ant antfile="build.xml" target="_remover-modulo-publicado">
+			<property name="ambiente" value="${ambiente}"/>
+			<property name="diretorios" value="${diretorios.Bling}"/>
+			<property name="arquivos" value="${arquivos.Bling}"/>
+		</ant>
+	</target>
+
+	<target name="_preparar-pacote">
+		<ant antfile="build.xml" target="_remover-modulo-publicado">
+			<property name="ambiente" value="${ambiente}"/>
+			<property name="diretorios" value="${diretorios.Bling}"/>
+			<property name="arquivos" value="${arquivos.Bling}"/>
+		</ant>
+
+		<ant antfile="build.xml" target="_copiar-modulo">
+			<property name="ambiente" value="${ambiente}"/>
+			<property name="diretorios" value="${diretorios.Bling}"/>
+			<property name="arquivos" value="${arquivos.Bling}"/>
+		</ant>
+	</target>
+
+	<target name="_pre-instalar-modulo">
+		<replace file="${compilacao}/app/code/local/Eloom/BlingV3/etc/config.xml" token="##cron_expr_sondaNfe##" value="${cron.expr.proccessNfe}"/>
+		<replace file="${compilacao}/app/code/local/Eloom/BlingV3/etc/config.xml" token="##cron_expr_sondaTrackings##" value="${cron.expr.proccessTrackings}"/>
+	</target>
+
+	<target name="_compactar-todos-js-css">
+		<ant antfile="build.xml" target="_compactar-todos-js-css">
+			<property name="ambiente" value="${ambiente}"/>
+			<property name="arquivos" value="${compactar.Bling}"/>
+		</ant>
+	</target>
+</project>

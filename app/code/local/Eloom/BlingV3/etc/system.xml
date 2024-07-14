@@ -1,0 +1,261 @@
+<?xml version="1.0"?>
+<config>
+	<sections>
+		<eloom_blingv3 translate="label" module="eloom_blingv3">
+			<class>separator-top</class>
+			<label><![CDATA[Bling ERP - V3]]></label>
+			<tab>eloom</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>101</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+
+			<groups>
+				<information>
+					<label><![CDATA[Information]]></label>
+					<frontend_model>eloom_blingv3/adminhtml_form_information</frontend_model>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>0</show_in_store>
+					<expanded>1</expanded>
+				</information>
+				<general translate="label">
+					<label><![CDATA[Configurações Gerais]]></label>
+					<frontend_type>text</frontend_type>
+					<sort_order>2</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<expanded>1</expanded>
+					<fields>
+						<active translate="label">
+							<label>Enabled</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment><![CDATA[É necessário ter, pelo menos, o Plano Cobalto contratado com o Bling.]]></comment>
+						</active>
+						<client_id translate="label">
+							<label>Client ID</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+							<validate>required-entry</validate>
+							<comment><![CDATA[Acesse o Bling, menu "Preferências > Sistema > Aplicativos"]]></comment>
+						</client_id>
+						<secret_key translate="label">
+							<label>Secret Key</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+							<validate>required-entry</validate>
+							<comment><![CDATA[Acesse o Bling, menu "Preferências > Sistema > Aplicativos"]]></comment>
+						</secret_key>
+						<product_id translate="label">
+							<label><![CDATA[Identificador do produto]]></label>
+							<frontend_type>select</frontend_type>
+							<source_model>Eloom_BlingV3_Model_System_Config_Source_ProductId</source_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+							<comment>
+								<![CDATA[Atributo do produto que corresponde a seu código.]]>
+							</comment>
+						</product_id>
+						<store_number translate="label">
+							<label><![CDATA[Número da Loja no Bling]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>6</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+							<comment><![CDATA[Identificação para separar os pedidos de diferentes lojas."]]></comment>
+						</store_number>
+					</fields>
+				</general>
+				<nfe_out>
+					<label><![CDATA[NF-e de Saída]]></label>
+					<frontend_type>text</frontend_type>
+					<sort_order>3</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>0</show_in_store>
+					<expanded>1</expanded>
+					<fields>
+						<serie translate="comment">
+							<label><![CDATA[Série]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+							<validate>required-entry</validate>
+							<comment><![CDATA[Série da NFe.]]></comment>
+						</serie>
+						<comment translate="comment">
+							<label><![CDATA[Comentário no pedido]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+							<comment>
+								<![CDATA[
+Comentário inserido no pedido.<br />
+Valor em branco não insere comentário.<br/>
+Valor padrão: chave de acesso: %s.
+]]>
+							</comment>
+						</comment>
+						<mapped translate="comment">
+							<label><![CDATA[Mapeamento]]></label>
+							<frontend_model>eloom_blingv3/adminhtml_system_config_form_field_nfeout</frontend_model>
+							<backend_model>adminhtml/system_config_backend_serialized_array</backend_model>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+							<comment><![CDATA[<p>Este mapeamento deve ser idêntico ao mapeado no Bling, menu "Preferências > Notas Fiscais > Natureza de operação".</p>]]></comment>
+						</mapped>
+					</fields>
+				</nfe_out>
+				<shipping>
+					<label><![CDATA[Frete]]></label>
+					<frontend_type>text</frontend_type>
+					<sort_order>5</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<expanded>1</expanded>
+					<fields>
+						<name translate="comment">
+							<label><![CDATA[Integrações Logísticas]]></label>
+							<frontend_model>eloom_blingv3/adminhtml_system_config_form_field_shipping</frontend_model>
+							<backend_model>adminhtml/system_config_backend_serialized_array</backend_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+							<comment>
+								<![CDATA[<p>Mapeie os serviços de transporte cadastrados no Bling, menu "Preferências > Logística > Configurações de integrações logísticas", nestes campos.</p>
+                <p>Este mapeamento, quando feito corretamete, preencherá as informações de transporte na Nf-e automaticamente.</p>
+                ]]></comment>
+						</name>
+					</fields>
+				</shipping>
+				<payment>
+					<label><![CDATA[Pagamento]]></label>
+					<frontend_type>text</frontend_type>
+					<sort_order>6</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<expanded>1</expanded>
+					<fields>
+						<header translate="label">
+							<label><![CDATA[<strong>MAPEAMENTOS</strong>]]></label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</header>
+						<mapped translate="label">
+							<label><![CDATA[Como funciona?]]></label>
+							<frontend_type>label</frontend_type>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>
+								<![CDATA[
+                  <p>As Formas de Pagamento listadas abaixo já estão mapeadas no código fonte do Módulo Bling.</p>
+                  <p><strong>MercadoPago</strong> - Cartão de Crédito e Boleto Bancário.</p>
+                  <p><strong>PagSeguro</strong> - Cartão de Crédito e Boleto Bancário.</p>
+                  <p><strong>PayU</strong> - Cartão de Crédito e Boleto Bancário.</p>
+                ]]></comment>
+						</mapped>
+						<name translate="comment">
+							<label><![CDATA[Formas de Pagamento]]></label>
+							<frontend_model>eloom_blingv3/adminhtml_system_config_form_field_payment</frontend_model>
+							<backend_model>adminhtml/system_config_backend_serialized_array</backend_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+							<comment>
+								<![CDATA[<p>O gerenciamento das formas de pagamento pode ser feito acessando Preferências > Finanças > Gerenciar formas de pagamento.</p>
+                    <p>Nas parcelas do pedido de venda e da nota fiscal é possível selecionar as formas de pagamento criadas no gerenciador.</p>
+                ]]></comment>
+						</name>
+					</fields>
+				</payment>
+				<tracking>
+					<label><![CDATA[Rastreamento]]></label>
+					<frontend_type>text</frontend_type>
+					<sort_order>7</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<expanded>1</expanded>
+					<fields>
+						<header translate="label">
+							<label><![CDATA[<strong>MAPEAMENTOS</strong>]]></label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</header>
+						<obs translate="label">
+							<label><![CDATA[Como funciona?]]></label>
+							<frontend_type>label</frontend_type>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>
+								<![CDATA[<p>Ao gerar uma NF no Bling, o mesmo devolve um número de rastreamento para criar a entrega na loja.</p>
+                <p>A origem desse número varia em cada transportadora. Mapeie os campos corretamente de acordo com as informações abaixo.</p>
+                <p><strong>Correios</strong> - Código de Rastreamento.</p>
+                <p><strong>Jadlog</strong> - Número da Nota Fiscal.</p>]]></comment>
+						</obs>
+						<timer translate="label">
+							<label><![CDATA[Preencher localizador no pedido]]></label>
+							<frontend_type>select</frontend_type>
+							<source_model>Eloom_BlingV3_Model_System_Config_Source_Timer</source_model>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+							<comment><![CDATA[Escolhendo o preenchimento automático, o sistema irá inserir o localizador no pedido.<br />
+                                O tempo poderá variar alguns minutos para mais devido às configurações de agendamento da Cron.
+                                ]]>
+							</comment>
+						</timer>
+						<name translate="comment">
+							<label><![CDATA[Rastreamento]]></label>
+							<frontend_model>eloom_blingv3/adminhtml_system_config_form_field_tracking</frontend_model>
+							<backend_model>adminhtml/system_config_backend_serialized_array</backend_model>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+							<comment><![CDATA[]]></comment>
+						</name>
+					</fields>
+				</tracking>
+			</groups>
+		</eloom_blingv3>
+	</sections>
+</config>
