@@ -118,17 +118,6 @@
                 <class>Eloom_BlingV3_Block</class>
             </eloom_blingv3>
         </blocks>
-        <events>
-            <process_callback_event>
-                <observers>
-                    <eloom_blingv3_process_callback_observer>
-                        <type>singleton</type>
-                        <class>eloom_blingv3/observer</class>
-                        <method>processCallback</method>
-                    </eloom_blingv3_process_callback_observer>
-                </observers>
-            </process_callback_event>
-        </events>
     </global>
 
     <crontab>

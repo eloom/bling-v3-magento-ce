@@ -60,11 +60,29 @@
 							<validate>required-entry</validate>
 							<comment><![CDATA[Acesse o Bling, menu "Preferências > Sistema > Aplicativos"]]></comment>
 						</secret_key>
+						<access_token translate="label">
+							<label>Token</label>
+							<frontend_type>label</frontend_type>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+							<comment><![CDATA[]]></comment>
+						</access_token>
+						<refresh_token translate="label">
+							<label>Refresh Token</label>
+							<frontend_type>label</frontend_type>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+							<comment><![CDATA[]]></comment>
+						</refresh_token>
 						<product_id translate="label">
 							<label><![CDATA[Identificador do produto]]></label>
 							<frontend_type>select</frontend_type>
 							<source_model>Eloom_BlingV3_Model_System_Config_Source_ProductId</source_model>
-							<sort_order>5</sort_order>
+							<sort_order>6</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>0</show_in_store>
@@ -75,7 +93,7 @@
 						<store_number translate="label">
 							<label><![CDATA[Número da Loja no Bling]]></label>
 							<frontend_type>text</frontend_type>
-							<sort_order>6</sort_order>
+							<sort_order>7</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>0</show_in_store>

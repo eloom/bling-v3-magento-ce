@@ -5,9 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e68afb0-ac1c-4d47-ab89-3589550545f8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Plataforma - Bling.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Observer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Observer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-desenv.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-desenv.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Nfe.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Nfe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Nfe/Out.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Nfe/OutToXml.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/NfeToXml.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/controllers/Adminhtml/NfeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/controllers/Adminhtml/NfeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/controllers/CallbackController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/controllers/CallbackController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/etc/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/etc/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/etc/system.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/etc/system.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +48,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/eloom/Documents/Projetos/M1/Modulos/General/bling-v3-magento-ce&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/eloom/Documents/Projetos/M1/Modulos/General/bling-v3-magento-ce/app/code/local/Eloom/BlingV3/controllers/Adminhtml&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -48,6 +59,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/controllers/Adminhtml" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/controllers" />
     </key>
@@ -132,6 +144,28 @@
       <workItem from="1721271934126" duration="209000" />
       <workItem from="1721272272459" duration="78000" />
       <workItem from="1721272489268" duration="215000" />
+      <workItem from="1721315771857" duration="168000" />
+      <workItem from="1721676050475" duration="565000" />
+      <workItem from="1721678152267" duration="916000" />
+      <workItem from="1721757810856" duration="3687000" />
+      <workItem from="1721764461049" duration="78000" />
+      <workItem from="1721768536124" duration="1407000" />
+      <workItem from="1721770947734" duration="211000" />
+      <workItem from="1721775474964" duration="579000" />
+      <workItem from="1721776376854" duration="219000" />
+      <workItem from="1721776762694" duration="105000" />
+      <workItem from="1721776967007" duration="157000" />
+      <workItem from="1721781365595" duration="529000" />
+      <workItem from="1721782612825" duration="664000" />
+      <workItem from="1721787141893" duration="6265000" />
+      <workItem from="1721833104489" duration="1288000" />
+      <workItem from="1721834619509" duration="421000" />
+      <workItem from="1721835249721" duration="1299000" />
+      <workItem from="1721838102973" duration="273000" />
+      <workItem from="1721840911110" duration="6201000" />
+      <workItem from="1721920714994" duration="1205000" />
+      <workItem from="1721925593546" duration="963000" />
+      <workItem from="1721926831579" duration="2742000" />
     </task>
     <servers />
   </component>
