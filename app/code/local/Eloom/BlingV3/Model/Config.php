@@ -15,7 +15,7 @@ class Eloom_BlingV3_Model_Config extends Mage_Core_Model_Abstract {
 	/**
 	 * Mapeamento das Transportadoras - Loja > BlingV3
 	 */
-	const XML_PATH_SHIPPING = 'eloom_blingv3eloom_bling/shipping/name';
+	const XML_PATH_SHIPPING = 'eloom_blingv3/shipping/name';
 
 
 	/**

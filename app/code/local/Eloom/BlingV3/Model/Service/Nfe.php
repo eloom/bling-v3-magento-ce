@@ -25,7 +25,7 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 		parent::_construct();
 	}
 
-	public function processNfeIn() {
+	public function processNfeOut() {
 		$this->logger->info("Processando Nfe.");
 
 		$collection = Mage::getModel('eloom_blingv3/nfe')->getCollection();
@@ -77,6 +77,7 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 				//$nfe->setNumero(6541);
 				//$nfe->setDataEmissao(new DateTime());
 				$nfe->setDataOperacao(new DateTime());
+				$nfe->setDesconto($this->getExtraAmountValues($order));
 
 				/**
 				 * Contato
@@ -109,7 +110,7 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 				}
 				$endereco->setCep($address->getPostcode());
 				$endereco->setMunicipio($address->getCity());
-				$endereco->setUf($address->getRegion());
+				$endereco->setUf($address->getRegionCode());
 				$endereco->setPais($address->getCountryId());
 				$contato->setEndereco($endereco);
 
@@ -161,13 +162,86 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 					}
 				}
 
-				/*
+				/**
+				 * Gift Wrap AH
+				 */
+				if ($order->getBaseAwGiftwrapAmount()) {
+					$item = Item::of();
+					$item->setCodigo('GIFTWRAP');
+					$item->setDescricao('Embalagem especial');
+					$item->setUnidade('UN');
+					$item->setClassificacaoFiscal('48195000');
+					$item->setOrigem('0');
+					$item->setQuantidade(1);
+					$item->setValor($order->getAwGiftwrapAmount());
+					$item->setTipo('P');
+
+					$nfe->getItens()->push($item);
+				}
+
+				/**
+				 * Transporte
+				 */
+				$shippingMethod = $order->getShippingMethod();
+				$shippingMethods = unserialize($config->getShippingMapped());
+				$labels = null;
+
+				$labels = [];
+				if (is_array($shippingMethods)) {
+					foreach ($shippingMethods as $value) {
+						$labels[$value['method']] = $value;
+						if ($value['method'] == $shippingMethod) {
+							break;
+						}
+					}
+				}
+
+				$transportadora = null;
+				$servicos = null;
+				if (count($labels) > 0) {
+					if (array_key_exists($shippingMethod, $labels)) {
+						$transportadora = $labels[$shippingMethod]['bling_carrier'];
+						$servicos = $labels[$shippingMethod]['bling_service'];
+					}
+				}
+
 				$transporte = $nfe->getTransporte();
 				$transporte->setFretePorConta(0);
-				$transporte->setFrete(20);
-				$nfe->setTransporte($transporte);
-				*/
+				$transporte->setFrete(round($order->getBaseShippingAmount(), 2));
 
+				$transportador = $transporte->getTransportador();
+				$transportador->setNome($transportadora);
+				$transporte->setTransportador($transportador);
+
+				if ($servicos) {
+					$etiqueta = $transporte->getEtiqueta();
+					$etiqueta->setNome($address->getName());
+
+					if (!$helper->isEmpty($address->getStreet(1))) {
+						$etiqueta->setEndereco($address->getStreet(1));
+					}
+					if (!$helper->isEmpty($address->getStreet(2))) {
+						$etiqueta->setNumero($address->getStreet(2));
+					}
+					if (!$helper->isEmpty($address->getStreet(3))) {
+						$etiqueta->setComplemento($address->getStreet(3));
+					}
+					if (!$helper->isEmpty($address->getStreet(4))) {
+						$etiqueta->setBairro($address->getStreet(4));
+					}
+					if (!$helper->isEmpty($address->getCity())) {
+						$etiqueta->setMunicipio($address->getCity());
+					}
+					if (!$helper->isEmpty($address->getRegion())) {
+						$etiqueta->setUf($address->getRegionCode());
+					}
+					if (!$helper->isEmpty($address->getPostcode())) {
+						$etiqueta->setCep($address->getPostcode());
+					}
+					$transporte->setEtiqueta($etiqueta);
+				}
+
+				$nfe->setTransporte($transporte);
 
 				$this->logger->info($nfe->jsonSerialize());
 			} catch (\Exception $e) {
@@ -185,5 +259,39 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 		}
 
 		return $address;
+	}
+
+	/**
+	 * Gets extra amount values for order
+	 *
+	 * @return float
+	 */
+	protected function getExtraAmountValues($order) {
+		$addition = 0.00;
+		$discount = 0.00;
+		if ($order->getBaseDiscountAmount()) {
+			$discount += $order->getBaseDiscountAmount();
+		}
+		if ($order->getMercadopagoBaseDiscountAmount()) {
+			$discount += $order->getMercadopagoBaseDiscountAmount();
+		}
+		if ($order->getMercadopagoBaseCampaignAmount()) {
+			$discount += $order->getMercadopagoBaseCampaignAmount();
+		}
+		if ($order->getPayuBaseDiscountAmount()) {
+			$discount += $order->getPayuBaseDiscountAmount();
+		}
+		if ($order->getPagseguroBaseDiscountAmount()) {
+			$discount += $order->getPagseguroBaseDiscountAmount();
+		}
+		if ($order->getBaseAffiliateplusDiscount()) {
+			$discount += $order->getBaseAffiliateplusDiscount();
+		}
+		if ($order->getBaseTaxAmount()) {
+			$addition = $order->getBaseTaxAmount();
+		}
+		$amount = $addition + $discount;
+
+		return abs(round($amount, 2));
 	}
 }

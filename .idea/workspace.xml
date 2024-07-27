@@ -5,20 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e68afb0-ac1c-4d47-ab89-3589550545f8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Plataforma - Bling.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Observer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Observer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Nfe.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Nfe.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Nfe/Out.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Nfe/OutToXml.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/NfeToXml.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/controllers/Adminhtml/NfeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/controllers/Adminhtml/NfeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/controllers/CallbackController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/controllers/CallbackController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/etc/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/etc/config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/etc/system.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/etc/system.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,6 +156,8 @@
       <workItem from="1721920714994" duration="1205000" />
       <workItem from="1721925593546" duration="963000" />
       <workItem from="1721926831579" duration="2742000" />
+      <workItem from="1721930483255" duration="876000" />
+      <workItem from="1722010088076" duration="4373000" />
     </task>
     <servers />
   </component>

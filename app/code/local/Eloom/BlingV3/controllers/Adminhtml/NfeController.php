@@ -52,7 +52,7 @@ class Eloom_BlingV3_Adminhtml_NfeController extends Mage_Adminhtml_Controller_Ac
 
 			try {
 				$nfeService = Mage::getModel('eloom_blingv3/service_nfe');
-				$nfeService->processNfeIn();
+				$nfeService->processNfeOut();
 			} catch (\Exception $e) {
 				$this->logger->error($e->getMessage());
 			}
