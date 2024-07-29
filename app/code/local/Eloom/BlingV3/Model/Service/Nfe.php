@@ -5,8 +5,11 @@
 use Eloom\SdkBling\Bling;
 use Eloom\SdkBling\Enum\TipoFrete;
 use Eloom\SdkBling\Enum\TipoPessoa;
+use Eloom\SdkBling\Model\Request\FormaPagamento;
 use Eloom\SdkBling\Model\Request\Item;
 use Eloom\SdkBling\Model\Request\Nfe;
+use Eloom\SdkBling\Model\Request\NotasFiscaisTransporteVolume;
+use Eloom\SdkBling\Model\Request\Parcela;
 
 class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 
@@ -205,11 +208,11 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 				}
 
 				$transportadora = null;
-				$servicos = null;
+				$servico = null;
 				if (count($labels) > 0) {
 					if (array_key_exists($shippingMethod, $labels)) {
 						$transportadora = $labels[$shippingMethod]['bling_carrier'];
-						$servicos = $labels[$shippingMethod]['bling_service'];
+						$servico = $labels[$shippingMethod]['bling_service'];
 					}
 				}
 
@@ -222,7 +225,7 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 				$transportador->setNome($transportadora);
 				$transporte->setTransportador($transportador);
 
-				if ($servicos) {
+				if ($servico) {
 					$etiqueta = $transporte->getEtiqueta();
 					$etiqueta->setNome($address->getName());
 
@@ -249,28 +252,60 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 					}
 					$transporte->setEtiqueta($etiqueta);
 				}
+				/**
+				 * Volumes
+				 */
+				$vftv = NotasFiscaisTransporteVolume::of();
+				$vftv->setServico($servico);
+				$transporte->getVolumes()->push($vftv);
 
 				$nfe->setTransporte($transporte);
 
+				/**
+				 * Parcelas
+				 */
+				$installments = Mage::getModel('eloom_bling/service_payment_proxy')->parseXml($order->getId(), $order->getPayment());
+				if ($installments) {
+					foreach ($installments as $paymentMethod) {
+						$parcela = Parcela::of();
+						if ($paymentMethod->getPaymentDay()) {
+							$parcela->setData($paymentMethod->getPaymentDay());
+						}
+						if ($paymentMethod->getAmount()) {
+							$parcela->setValor($paymentMethod->getAmount());
+						}
+						if ($paymentMethod->getMethod()) {
+							$formas = $bling->paymentMethods()->findAll(0, 20, ['descricao' => $paymentMethod->getMethod()]);
+							$this->logger->info($formas);
+							if (is_array($paymentMethod->getMethod()) && count($paymentMethod->getMethod()) == 1) {
+								$forma = FormaPagamento::of();
+								$forma->setId($formas[0]->id);
+
+								$parcela->setFormaPagamento($forma);
+							} else {
+								throw new \Exception("Forma de pagamento não encontrada/mapeada.");
+							}
+						}
+						if ($paymentMethod->getObservations()) {
+							$parcela->setObservacoes($paymentMethod->getObservations());
+						}
+
+						$nfe->getParcelas()->push($parcela);
+					}
+				}
+
 				$this->logger->info($nfe->jsonSerialize());
 
-				$response = $bling->nfe()->create($nfe->jsonSerialize());
-
+				//$response = $bling->nfe()->create($nfe->jsonSerialize());
 				//$this->logger->info($response);
-
-				$record->setBlingId(trim($response->id))->setBlingNumber(trim($response->numero))->save();
+				//$record->setBlingId(trim($response->id))->setBlingNumber(trim($response->numero))->save();
 
 				/**
 				 * Muda Status do Pedido
 				 */
+				/*
 				$toStatus = $config->getFinalStatusMappedOnNfeOut($order->getStatus());
 				if ($toStatus) {
-					/*
-					$state = $this->_getAssignedState($toStatus);
-					if($state) {
-						$this->order->setState($state, true);
-					}
-					*/
 					$comment = "Nota Fiscal Eletrônica emitida.";
 					$order->addStatusHistoryComment($comment, $toStatus, true);
 					$order->setStatus($toStatus);
@@ -281,11 +316,14 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 				$message = sprintf('Pedido %s - Gerou NFe %s.', $order->getIncrementId(), trim($response->numero));
 				Eloom_Bling_Result::getInstance()->addSuccessMessage($message);
 				$this->logger->info($message);
+				*/
 			} catch (\Exception $e) {
-				$this->logger->error(sprintf("Erro ao gerar Nfe, pedido [%s].", $nfe->getOrderId()));
+				$this->logger->error(sprintf("Erro ao gerar Nfe, pedido [%s].", $record->getOrderId()));
+				$this->logger->error($e->getMessage());
 			}
 		}
 	}
+
 
 	protected function getAddress($order) {
 		$address = null;

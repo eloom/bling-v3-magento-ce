@@ -114,7 +114,7 @@ class Eloom_BlingV3_Model_Cron extends Mage_Core_Model_Abstract {
 			return true;
 		}
 		$this->logger->info('BlingV3 - Buscando Localizadores - início');
-		$collection = Mage::getModel('eloom_blingv3/nfe')->getCollection();
+		$collection = Mage::getModel('eloom_blingv3/record')->getCollection();
 		$collection->addFieldToSelect('*');
 		$collection->addFieldToFilter('tracking_number', array('null' => true));
 		$collection->addFieldToFilter('created_at', array('from' => strtotime('-3 day', time()), 'to' => time(), 'datetime' => true));
@@ -125,8 +125,6 @@ class Eloom_BlingV3_Model_Cron extends Mage_Core_Model_Abstract {
 			return;
 		}
 
-		$apikey = $config->getApiKey();
-		$serie = $config->getNfeOutSerie();
 		$nfeService = Mage::getModel('eloom_blingv3/service_nfe');
 
 		$totalRecords = $collection->getSize();
@@ -144,28 +142,28 @@ class Eloom_BlingV3_Model_Cron extends Mage_Core_Model_Abstract {
 				break;
 			}
 
-			foreach($collection as $nfe) {
+			foreach($collection as $record) {
 				try {
-					$this->logger->info(sprintf("BlingV3 - Buscando Localizador - Pedido %s", $nfe->getOrderId()));
+					$this->logger->info(sprintf("BlingV3 - Buscando Localizador - Pedido %s", $record->getOrderId()));
 
-					$response = $nfeService->getNfe($apikey, $nfe->getBlingNumber(), $serie);
+					$response = $nfeService->getNfe($record->getBlingId());
 					if ($response && is_array($response->retorno->notasfiscais)) {
 						foreach($response->retorno->notasfiscais as $element) {
 							try {
-								$trackingNumber = $nfe->getTrackingNumber();
+								$trackingNumber = $record->getTrackingNumber();
 								if (empty($trackingNumber)) {
-									$order = Mage::getModel('sales/order')->load($nfe->getOrderId());
+									$order = Mage::getModel('sales/order')->load($record->getOrderId());
 									$shippingMethodCode = $config->getShippingMethodCode($order->getShippingMethod());
 
 									$rastreador = $element->notafiscal->codigosRastreamento->codigoRastreamento;
 									if ($config->isTrackingNumberIsNfNumber($shippingMethodCode)) {
 										$rastreador = $element->notafiscal->numero;
 									}
-									if (!empty($rastreador) && $config->isSaveTracking($nfe->getCreatedAt())) {
-										$nfe->setTrackingNumber(trim($rastreador));
-										$nfe->setStatus($element->notafiscal->situacao);
+									if (!empty($rastreador) && $config->isSaveTracking($record->getCreatedAt())) {
+										$record->setTrackingNumber(trim($rastreador));
+										$record->setStatus($element->notafiscal->situacao);
 
-										$nfe->save();
+										$record->save();
 
 										Mage::getModel('eloom_blingv3/shipment')->createShipment($order, $rastreador, $shippingMethodCode);
 									}

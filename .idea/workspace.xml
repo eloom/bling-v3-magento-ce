@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6e68afb0-ac1c-4d47-ab89-3589550545f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Cron.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Cron.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Nfe.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Nfe.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -161,7 +162,15 @@
       <workItem from="1722271922884" duration="1604000" />
       <workItem from="1722274810449" duration="29000" />
       <workItem from="1722274965909" duration="116000" />
-      <workItem from="1722275099477" duration="1165000" />
+      <workItem from="1722275099477" duration="1943000" />
+      <workItem from="1722283847411" duration="129000" />
+      <workItem from="1722284874301" duration="66000" />
+      <workItem from="1722285032325" duration="203000" />
+      <workItem from="1722285293336" duration="509000" />
+      <workItem from="1722286370991" duration="687000" />
+      <workItem from="1722287149711" duration="412000" />
+      <workItem from="1722287765260" duration="595000" />
+      <workItem from="1722288443809" duration="108000" />
     </task>
     <servers />
   </component>
