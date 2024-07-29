@@ -3,6 +3,7 @@
 ##eloom.licenca##
 
 use Eloom\SdkBling\Bling;
+use Eloom\SdkBling\Enum\TipoFrete;
 use Eloom\SdkBling\Enum\TipoPessoa;
 use Eloom\SdkBling\Model\Request\Item;
 use Eloom\SdkBling\Model\Request\Nfe;
@@ -45,17 +46,17 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 		/**
 		 * Refresh Token
 		 */
-		$client = Bling::of($config->getApiKey(), $config->getSecretKey(), null);
-		$response = $client->refreshToken($config->getRefreshToken());
+		$bling = Bling::of($config->getApiKey(), $config->getSecretKey(), null);
+		$response = $bling->refreshToken($config->getRefreshToken());
 		$config->saveAccessToken($response->access_token);
 		$config->saveRefreshToken($response->refresh_token);
 
 		/**
 		 * Autentica novamente
 		 */
-		$client = Bling::of(null, null, $config->getAccessToken());
+		$bling = Bling::of(null, null, $config->getAccessToken());
 
-		$nt = $client->naturezaOperacoes();
+		$nt = $bling->naturezaOperacoes();
 		$filtros = [
 			'situacao' => 1,
 			'descricao' => 'Venda de mercadorias'
@@ -66,10 +67,10 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 
 		$helper = Mage::helper('eloombootstrap');
 
-		foreach ($collection as $nfe) {
+		foreach ($collection as $record) {
 			try {
-				$order = Mage::getModel('sales/order')->load($nfe->getOrderId());
-				$this->logger->info(sprintf("Bling - Buscando NFe do pedido [%s]", $nfe->getOrderId()));
+				$order = Mage::getModel('sales/order')->load($record->getOrderId());
+				$this->logger->info(sprintf("Bling - Buscando NFe do pedido [%s]", $record->getOrderId()));
 
 				//$dataOperacao = Mage::getModel('core/date')->date('Y-m-d H:i:s', strtotime(time()));
 				$nfe = Nfe::build();
@@ -90,6 +91,13 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 					$contato->setId($order->getCustomerId());
 				}
 				$contato->setNome($order->getCustomerName());
+
+				/**
+				 * CPF/CNPJ
+				 */
+				$taxvat = $order->getCustomerTaxvat();
+				$nd = $helper->getOnlyNumbers($taxvat);
+				$contato->setNumeroDocumento($nd);
 				$contato->setTipoPessoa(TipoPessoa::FISICA);
 				if ($order->getCustomerTipoPessoa() != null && $order->getCustomerTipoPessoa() == TipoPessoa::JURIDICA) {
 					$contato->setTipoPessoa(TipoPessoa::JURIDICA);
@@ -206,6 +214,7 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 				}
 
 				$transporte = $nfe->getTransporte();
+				$transporte->setTipoFrete(TipoFrete::TRANSPORTE_LOGISTICA_CADASTRADA);
 				$transporte->setFretePorConta(0);
 				$transporte->setFrete(round($order->getBaseShippingAmount(), 2));
 
@@ -244,6 +253,34 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 				$nfe->setTransporte($transporte);
 
 				$this->logger->info($nfe->jsonSerialize());
+
+				$response = $bling->nfe()->create($nfe->jsonSerialize());
+
+				//$this->logger->info($response);
+
+				$record->setBlingId(trim($response->id))->setBlingNumber(trim($response->numero))->save();
+
+				/**
+				 * Muda Status do Pedido
+				 */
+				$toStatus = $config->getFinalStatusMappedOnNfeOut($order->getStatus());
+				if ($toStatus) {
+					/*
+					$state = $this->_getAssignedState($toStatus);
+					if($state) {
+						$this->order->setState($state, true);
+					}
+					*/
+					$comment = "Nota Fiscal Eletrônica emitida.";
+					$order->addStatusHistoryComment($comment, $toStatus, true);
+					$order->setStatus($toStatus);
+					$order->setIsVisibleOnFront(false);
+					$order->save();
+					$order->sendOrderUpdateEmail(true, $comment);
+				}
+				$message = sprintf('Pedido %s - Gerou NFe %s.', $order->getIncrementId(), trim($response->numero));
+				Eloom_Bling_Result::getInstance()->addSuccessMessage($message);
+				$this->logger->info($message);
 			} catch (\Exception $e) {
 				$this->logger->error(sprintf("Erro ao gerar Nfe, pedido [%s].", $nfe->getOrderId()));
 			}

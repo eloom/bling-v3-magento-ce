@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6e68afb0-ac1c-4d47-ab89-3589550545f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Nfe.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Nfe.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/controllers/Adminhtml/NfeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/controllers/Adminhtml/NfeController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,6 +156,12 @@
       <workItem from="1721926831579" duration="2742000" />
       <workItem from="1721930483255" duration="876000" />
       <workItem from="1722010088076" duration="4373000" />
+      <workItem from="1722102978466" duration="3000" />
+      <workItem from="1722186295836" duration="1728000" />
+      <workItem from="1722271922884" duration="1604000" />
+      <workItem from="1722274810449" duration="29000" />
+      <workItem from="1722274965909" duration="116000" />
+      <workItem from="1722275099477" duration="1165000" />
     </task>
     <servers />
   </component>
