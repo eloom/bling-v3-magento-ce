@@ -127,7 +127,7 @@
                     <cron_expr>##cron_expr_sondaNfe##</cron_expr>
                 </schedule>
                 <run>
-                    <model>eloom_blingv3/cron::proccessNfe</model>
+                    <model>eloom_blingv3/cron::completeNfe</model>
                 </run>
             </eloom_blingv3_nfe_access_key>
             <eloom_blingv3_trackings>
@@ -135,7 +135,7 @@
                     <cron_expr>##cron_expr_sondaTrackings##</cron_expr>
                 </schedule>
                 <run>
-                    <model>eloom_blingv3/cron::proccessTrackings</model>
+                    <model>eloom_blingv3/cron::completeTrackings</model>
                 </run>
             </eloom_blingv3_trackings>
         </jobs>

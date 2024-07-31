@@ -13,6 +13,7 @@ use Eloom\SdkBling\Model\Request\Parcela;
 
 class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 
+	const PAGE_RESULTS = 10;
 	const ATTR_OPERATION_UNIT = 'nfe_operation_unit';
 	const ATTR_PRODUCT_SOURCE = 'nfe_product_source';
 	const ATTR_NCM = 'nfe_ncm';
@@ -29,8 +30,8 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 		parent::_construct();
 	}
 
-	public function processNfeOut() {
-		$this->logger->info("Processando Nfe.");
+	public function generateNfeOut() {
+		$this->logger->info("Gerando Nf-e.");
 
 		$collection = Mage::getModel('eloom_blingv3/nfe')->getCollection();
 		$collection->addFieldToSelect('*');
@@ -264,26 +265,27 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 				/**
 				 * Parcelas
 				 */
-				$installments = Mage::getModel('eloom_bling/service_payment_proxy')->parseXml($order->getId(), $order->getPayment());
+				$installments = Mage::getModel('eloom_blingv3/service_payment_proxy')->parseXml($order->getId(), $order->getPayment());
 				if ($installments) {
 					foreach ($installments as $paymentMethod) {
 						$parcela = Parcela::of();
 						if ($paymentMethod->getPaymentDay()) {
-							$parcela->setData($paymentMethod->getPaymentDay());
+							$paymentDay = Mage::getModel('core/date')->date('Y-m-d', strtotime($paymentMethod->getPaymentDay()));
+							$parcela->setData(new \DateTime($paymentDay));
 						}
 						if ($paymentMethod->getAmount()) {
 							$parcela->setValor($paymentMethod->getAmount());
 						}
 						if ($paymentMethod->getMethod()) {
-							$formas = $bling->paymentMethods()->findAll(0, 20, ['descricao' => $paymentMethod->getMethod()]);
-							$this->logger->info($formas);
-							if (is_array($paymentMethod->getMethod()) && count($paymentMethod->getMethod()) == 1) {
+							$formasPagamento = $bling->paymentMethods()->findAll(0, 20, ['descricao' => $paymentMethod->getMethod()])->toArray();
+							//$this->logger->info($formasPagamento);
+							if (is_array($formasPagamento) && count($formasPagamento) == 1) {
 								$forma = FormaPagamento::of();
-								$forma->setId($formas[0]->id);
+								$forma->setId($formasPagamento[0]->id);
 
 								$parcela->setFormaPagamento($forma);
 							} else {
-								throw new \Exception("Forma de pagamento não encontrada/mapeada.");
+								throw new \Exception(sprintf("Forma de pagamento [%s] não encontrada/mapeada.", $paymentMethod->getMethod()));
 							}
 						}
 						if ($paymentMethod->getObservations()) {
@@ -296,14 +298,13 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 
 				$this->logger->info($nfe->jsonSerialize());
 
-				//$response = $bling->nfe()->create($nfe->jsonSerialize());
+				$response = $bling->nfe()->create($nfe->jsonSerialize());
 				//$this->logger->info($response);
-				//$record->setBlingId(trim($response->id))->setBlingNumber(trim($response->numero))->save();
+				$record->setBlingId(trim($response->id))->setBlingNumber(trim($response->numero))->save();
 
 				/**
 				 * Muda Status do Pedido
 				 */
-				/*
 				$toStatus = $config->getFinalStatusMappedOnNfeOut($order->getStatus());
 				if ($toStatus) {
 					$comment = "Nota Fiscal Eletrônica emitida.";
@@ -313,17 +314,14 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 					$order->save();
 					$order->sendOrderUpdateEmail(true, $comment);
 				}
-				$message = sprintf('Pedido %s - Gerou NFe %s.', $order->getIncrementId(), trim($response->numero));
-				Eloom_Bling_Result::getInstance()->addSuccessMessage($message);
-				$this->logger->info($message);
-				*/
+				//$message = sprintf('Pedido %s - Gerou NFe %s.', $order->getIncrementId(), trim($response->numero));
+				//Eloom_Bling_Result::getInstance()->addSuccessMessage($message);
 			} catch (\Exception $e) {
 				$this->logger->error(sprintf("Erro ao gerar Nfe, pedido [%s].", $record->getOrderId()));
 				$this->logger->error($e->getMessage());
 			}
 		}
 	}
-
 
 	protected function getAddress($order) {
 		$address = null;
@@ -368,5 +366,210 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 		$amount = $addition + $discount;
 
 		return abs(round($amount, 2));
+	}
+
+	public function completeTrackings() {
+		$config = Mage::getModel('eloom_blingv3/config');
+		if ($config->isManuallyTracking()) {
+			$this->logger->info('Bling V3 - Sistema configurado para inserir o localizador manualmente.');
+
+			return true;
+		}
+		$collection = Mage::getModel('eloom_blingv3/nfe')->getCollection();
+		$collection->addFieldToSelect('*');
+		$collection->addFieldToFilter('tracking_number', array('null' => true));
+		$collection->addFieldToFilter('created_at', array('from' => strtotime('-3 day', time()), 'to' => time(), 'datetime' => true));
+		$collection->setOrder('entity_id', 'DESC');
+		//$collection->getSelect()->limit(100);
+
+		if (!$collection->getSize()) {
+			return;
+		}
+
+		$totalRecords = $collection->getSize();
+		$num = ($totalRecords / self::PAGE_RESULTS);
+		$offset = 0;
+		$pageValue = 1;
+
+		/**
+		 * Refresh Token
+		 */
+		$bling = Bling::of($config->getApiKey(), $config->getSecretKey(), null);
+		$response = $bling->refreshToken($config->getRefreshToken());
+		$config->saveAccessToken($response->access_token);
+		$config->saveRefreshToken($response->refresh_token);
+
+		/**
+		 * Autentica novamente
+		 */
+		$bling = Bling::of(null, null, $config->getAccessToken());
+
+		for ($i = 0; $i < $num; $i++) {
+			if ($pageValue > 1) {
+				$offset = ($pageValue - 1) * self::PAGE_RESULTS;
+			}
+
+			$collection = $this->getTrackingNumberCollection(self::PAGE_RESULTS, $offset);
+			if (!$collection->getSize()) {
+				break;
+			}
+
+			foreach ($collection as $record) {
+				try {
+					$this->logger->info(sprintf("Bling V3 - Buscando Localizador - Pedido %s", $record->getOrderId()));
+
+					$response = $bling->nfe()->find($record->getBlingId());
+					$this->logger->info($response);
+
+					if ($response) {
+						try {
+							$trackingNumber = $record->getTrackingNumber();
+							if (empty($trackingNumber)) {
+								$order = Mage::getModel('sales/order')->load($record->getOrderId());
+								$shippingMethodCode = $config->getShippingMethodCode($order->getShippingMethod());
+
+								$rastreador = null;
+								if (isset($response->transporte->volumes[0]) && isset($response->transporte->volumes[0]->id)) {
+									$rastreador = $response->transporte->volumes[0]->id;
+									if ($config->isTrackingNumberIsNfNumber($shippingMethodCode)) {
+										$rastreador = $response->numero;
+									}
+								}
+
+								if (!empty($rastreador) && $config->isSaveTracking($record->getCreatedAt())) {
+									$record->setTrackingNumber(trim($rastreador));
+									$record->setStatus($response->situacao);
+
+									$record->save();
+
+									Mage::getModel('eloom_blingv3/shipment')->createShipment($order, $rastreador, $shippingMethodCode);
+								}
+							}
+						} catch (Exception $e) {
+							$this->logger->error($e->getMessage());
+						}
+					}
+				} catch (Exception $e) {
+					$this->logger->error($e->getMessage());
+				}
+			}
+
+			$pageValue++;
+		}
+	}
+
+	public function completeNfe() {
+		$collection = Mage::getModel('eloom_blingv3/nfe')->getCollection();
+		$collection->addFieldToSelect('*');
+		$collection->addFieldToFilter('access_key', array('null' => true));
+		$collection->addFieldToFilter('created_at', array('from' => strtotime('-1 day', time()), 'to' => time(), 'datetime' => true));
+		$collection->setOrder('entity_id', 'DESC');
+
+		if (!$collection->getSize()) {
+			return;
+		}
+		$config = Mage::getModel('eloom_blingv3/config');
+		$comment = $config->getNfeOutComment();
+
+		$totalRecords = $collection->getSize();
+		$num = ($totalRecords / self::PAGE_RESULTS);
+		$offset = 0;
+		$pageValue = 1;
+
+		/**
+		 * Refresh Token
+		 */
+		$bling = Bling::of($config->getApiKey(), $config->getSecretKey(), null);
+		$response = $bling->refreshToken($config->getRefreshToken());
+		$config->saveAccessToken($response->access_token);
+		$config->saveRefreshToken($response->refresh_token);
+
+		/**
+		 * Autentica novamente
+		 */
+		$bling = Bling::of(null, null, $config->getAccessToken());
+
+		for ($i = 0; $i < $num; $i++) {
+			if ($pageValue > 1) {
+				$offset = ($pageValue - 1) * self::PAGE_RESULTS;
+			}
+
+			$collection = $this->getAccessKeyCollection(self::PAGE_RESULTS, $offset);
+			if (!$collection->getSize()) {
+				break;
+			}
+
+			foreach ($collection as $record) {
+				$this->logger->info(sprintf("Bling V3 - Buscando NF %s do Pedido %s", $record->getBlingNumber(), $record->getOrderId()));
+				try {
+					$response = $bling->nfe()->find($record->getBlingId());
+					/*
+					if ($response && isset($response->error) && $response->error->fields[0]->cod == 14) {
+						$record->delete();
+						continue;
+					}
+					*/
+
+					if ($response) {
+						$chaveAcesso = $response->chaveAcesso;
+						if ($chaveAcesso) {
+							$record->setAccessKey($chaveAcesso);
+							if (!empty($comment)) {
+								$comment = sprintf($comment, $chaveAcesso);
+								$record->addStatusHistoryComment($comment);
+							}
+							$record->setDanfeUrl($response->linkDanfe);
+							$record->setStatus($response->situacao);
+							$record->save();
+						}
+					}
+				} catch (Exception $e) {
+					$this->logger->error($e->getMessage());
+				} finally {
+					$chaveAcesso = $record->getNfeAccessKey();
+					if (!empty($chaveAcesso)) {
+						Mage::dispatchEvent('eloom_marketplace_nfe_save', array('order_id' => $record->getOrderId(), 'nfe_number' => $record->getNfeNumber(), 'nfe_access_key' => $record->getNfeAccessKey()));
+					}
+				}
+			}
+
+			$pageValue++;
+		}
+	}
+
+	/**
+	 * Retorno os registros com o "tracking_number" null
+	 *
+	 * @param $pageResult
+	 * @param $offset
+	 * @return mixed
+	 */
+	protected function getTrackingNumberCollection($pageResult, $offset) {
+		$collection = Mage::getModel('eloom_blingv3/nfe')->getCollection();
+		$collection->addFieldToSelect('*');
+		$collection->addFieldToFilter('tracking_number', array('null' => true));
+		$collection->addFieldToFilter('created_at', array('from' => strtotime('-3 day', time()), 'to' => time(), 'datetime' => true));
+		$collection->setOrder('entity_id', 'DESC');
+		$collection->getSelect()->limit(intval($pageResult), $offset);
+
+		return $collection;
+	}
+
+	/**
+	 * Retorno os registros com o "access_key" null
+	 *
+	 * @param $pageResult
+	 * @param $offset
+	 * @return mixed
+	 */
+	protected function getAccessKeyCollection($pageResult, $offset) {
+		$collection = Mage::getModel('eloom_blingv3/nfe')->getCollection();
+		$collection->addFieldToSelect('*');
+		$collection->addFieldToFilter('access_key', array('null' => true));
+		$collection->addFieldToFilter('created_at', array('from' => strtotime('-1 day', time()), 'to' => time(), 'datetime' => true));
+		$collection->setOrder('entity_id', 'DESC');
+		$collection->getSelect()->limit(intval($pageResult), $offset);
+
+		return $collection;
 	}
 }

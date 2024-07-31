@@ -31,7 +31,7 @@ class Eloom_BlingV3_Model_Service_Payment_PagseguroCc extends Mage_Core_Model_Ab
 			$paymentMethod->setMethod($paymentInstance->getTitle());
 			$paymentMethod->setObservations(sprintf("%s", $payment->getCcType()));
 
-			$paymentDay = Mage::getModel('core/date')->date('d/m/Y', strtotime($createTime . " + $days day"));
+			$paymentDay = Mage::getModel('core/date')->date('y-m-d', strtotime($createTime . " + $days day"));
 			$paymentMethod->setPaymentDay($paymentDay);
 
 			$installments[] = $paymentMethod;

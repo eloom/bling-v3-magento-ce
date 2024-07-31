@@ -35,8 +35,8 @@
 	</target>
 
 	<target name="_pre-instalar-modulo">
-		<replace file="${compilacao}/app/code/local/Eloom/BlingV3/etc/config.xml" token="##cron_expr_sondaNfe##" value="${cron.expr.proccessNfe}"/>
-		<replace file="${compilacao}/app/code/local/Eloom/BlingV3/etc/config.xml" token="##cron_expr_sondaTrackings##" value="${cron.expr.proccessTrackings}"/>
+		<replace file="${compilacao}/app/code/local/Eloom/BlingV3/etc/config.xml" token="##cron_expr_sondaNfe##" value="${cron.expr.completeNfe}"/>
+		<replace file="${compilacao}/app/code/local/Eloom/BlingV3/etc/config.xml" token="##cron_expr_sondaTrackings##" value="${cron.expr.completeTrackings}"/>
 	</target>
 
 	<target name="_compactar-todos-js-css">

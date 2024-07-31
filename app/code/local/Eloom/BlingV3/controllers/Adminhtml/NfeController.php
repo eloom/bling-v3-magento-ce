@@ -2,8 +2,6 @@
 
 ##eloom.licenca##
 
-use Eloom\SdkBling\Bling;
-
 class Eloom_BlingV3_Adminhtml_NfeController extends Mage_Adminhtml_Controller_Action {
 
 	private $logger;
@@ -52,28 +50,13 @@ class Eloom_BlingV3_Adminhtml_NfeController extends Mage_Adminhtml_Controller_Ac
 
 			try {
 				$nfeService = Mage::getModel('eloom_blingv3/service_nfe');
-				$nfeService->processNfeOut();
+				$nfeService->generateNfeOut();
 			} catch (\Exception $e) {
 				$this->logger->error($e->getMessage());
 			}
-
-			foreach (Eloom_BlingV3_Result::getInstance()->getSuccessMessages() as $message) {
-				Mage::getSingleton('adminhtml/session')->addSuccess($message);
-			}
-			foreach (Eloom_BlingV3_Result::getInstance()->getErrorsMessages() as $message) {
-				Mage::getSingleton('adminhtml/session')->addError($message);
-			}
-			Eloom_BlingV3_Result::getInstance()->reset();
-
 		} catch (Exception $e) {
 			Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
 		}
-
-		/**
-		 * Refresh Token
-		 */
-		//$client = Bling::of($config->getApiKey(), $config->getSecretKey(), null);
-		//$retorno = $client->refreshToken($config->getRefreshToken());
 
 		$this->_redirectReferer();
 	}
