@@ -35,7 +35,7 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 
 		$collection = Mage::getModel('eloom_blingv3/nfe')->getCollection();
 		$collection->addFieldToSelect('*');
-		$collection->addFieldToFilter('access_key', array('null' => true));
+		$collection->addFieldToFilter('bling_id', array('null' => true));
 		$collection->setOrder('entity_id', 'DESC');
 		$collection->addFieldToFilter('created_at', array('from' => strtotime('-1 day', time()), 'to' => time(), 'datetime' => true));
 		//$collection->getSelect()->limit(100);
@@ -67,7 +67,7 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 		];
 
 		$data = $nt->findAll(0, 100, $filtros);
-		$this->logger->info($data);
+		//$this->logger->info($data);
 
 		$helper = Mage::helper('eloombootstrap');
 
@@ -218,7 +218,7 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 				}
 
 				$transporte = $nfe->getTransporte();
-				$transporte->setTipoFrete(TipoFrete::TRANSPORTE_LOGISTICA_CADASTRADA);
+				//$transporte->setTipoFrete(TipoFrete::TRANSPORTE_LOGISTICA_CADASTRADA);
 				$transporte->setFretePorConta(0);
 				$transporte->setFrete(round($order->getBaseShippingAmount(), 2));
 
@@ -419,7 +419,7 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 					$this->logger->info(sprintf("Bling V3 - Buscando Localizador - Pedido %s", $record->getOrderId()));
 
 					$response = $bling->nfe()->find($record->getBlingId());
-					$this->logger->info($response);
+					//$this->logger->info($response);
 
 					if ($response) {
 						try {

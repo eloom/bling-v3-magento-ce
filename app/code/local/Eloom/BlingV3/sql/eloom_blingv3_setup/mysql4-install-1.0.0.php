@@ -146,13 +146,13 @@ if ($installer->getConnection()->isTableExists($nfeTable) != true) {
 			'nullable' => false,
 		), 'Placed from Store')
 		->addColumn('bling_number', Varien_Db_Ddl_Table::TYPE_TEXT, 50, array(
-			'nullable' => false,
+			'nullable' => true,
 		), 'Nfe BlingV3 Number')
 		->addColumn('tracking_number', Varien_Db_Ddl_Table::TYPE_TEXT, 50, array(
 			'nullable' => true,
 		), 'Tracking Number')
 		->addColumn('bling_id', Varien_Db_Ddl_Table::TYPE_TEXT, 50, array(
-			'nullable' => false,
+			'nullable' => true,
 		), 'Nfe BlingV3 ID')
 		->addColumn('access_key', Varien_Db_Ddl_Table::TYPE_TEXT, 80, array(
 			'nullable' => true,

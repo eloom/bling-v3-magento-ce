@@ -6,21 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6e68afb0-ac1c-4d47-ab89-3589550545f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Cron.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Cron.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Nfe.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Nfe.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Payment/MappedConfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Payment/MappedConfig.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Payment/MercadopagoBoleto.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Payment/MercadopagoBoleto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Payment/MercadopagoCc.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Payment/MercadopagoCc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Payment/PagseguroBoleto.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Payment/PagseguroBoleto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Payment/PagseguroCc.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Payment/PagseguroCc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Payment/PayuBoleto.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Payment/PayuBoleto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Payment/PayuCc.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Payment/PayuCc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/controllers/Adminhtml/NfeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/controllers/Adminhtml/NfeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/etc/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/etc/config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-Eloom_BlingV3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build-Eloom_BlingV3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-desenv.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-desenv.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-producao.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-producao.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-test.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-test.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/sql/eloom_blingv3_setup/mysql4-install-1.0.0.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/sql/eloom_blingv3_setup/mysql4-install-1.0.0.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +172,7 @@
       <workItem from="1722287149711" duration="412000" />
       <workItem from="1722287765260" duration="595000" />
       <workItem from="1722288443809" duration="205000" />
-      <workItem from="1722435544940" duration="10656000" />
+      <workItem from="1722435544940" duration="12950000" />
     </task>
     <servers />
   </component>

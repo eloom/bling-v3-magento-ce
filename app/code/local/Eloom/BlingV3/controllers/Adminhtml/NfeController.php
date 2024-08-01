@@ -29,10 +29,12 @@ class Eloom_BlingV3_Adminhtml_NfeController extends Mage_Adminhtml_Controller_Ac
 
 					$isEnabled = $config->isInitialStatusMappedOnNfeOut($order->getStatus());
 					if (!$isEnabled) {
-						return Eloom_BlingV3_Result::getInstance()->addErrorMessage(sprintf('Pedido %s - Status não liberado para gerar NF.', $order->getIncrementId()));
+						$this->logger->error(sprintf('Pedido %s - Status não liberado para gerar NF.', $order->getIncrementId()));
+						Mage::getSingleton('adminhtml/session')->addError(sprintf('Pedido %s - Status não liberado para gerar NF.', $order->getIncrementId()));
 					}
 					if (empty($serieNfe)) {
-						return Eloom_BlingV3_Result::getInstance()->addErrorMessage(sprintf('Pedido %s - Série da NF não informada.', $order->getIncrementId()));
+						$this->logger->error(sprintf('Pedido %s - Série da NF não informada.', $order->getIncrementId()));
+						Mage::getSingleton('adminhtml/session')->addError(sprintf('Pedido %s - Série da NF não informada.', $order->getIncrementId()));
 					}
 
 					$nfeModel = Mage::getModel('eloom_blingv3/nfe');
