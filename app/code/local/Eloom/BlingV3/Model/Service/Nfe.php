@@ -10,6 +10,7 @@ use Eloom\SdkBling\Model\Request\Item;
 use Eloom\SdkBling\Model\Request\Nfe;
 use Eloom\SdkBling\Model\Request\NotasFiscaisTransporteVolume;
 use Eloom\SdkBling\Model\Request\Parcela;
+use Eloom\SdkBling\Model\Request\TipoNota;
 
 class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 
@@ -78,7 +79,7 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 
 				//$dataOperacao = Mage::getModel('core/date')->date('Y-m-d H:i:s', strtotime(time()));
 				$nfe = Nfe::build();
-				$nfe->setTipo(1);
+				$nfe->setTipo(TipoNota::SAIDA);
 				//$nfe->setNumero(6541);
 				//$nfe->setDataEmissao(new DateTime());
 				$nfe->setDataOperacao(new DateTime());
