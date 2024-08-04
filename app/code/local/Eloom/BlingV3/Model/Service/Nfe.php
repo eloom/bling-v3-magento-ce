@@ -3,14 +3,15 @@
 ##eloom.licenca##
 
 use Eloom\SdkBling\Bling;
+use Eloom\SdkBling\Enum\Contribuinte;
 use Eloom\SdkBling\Enum\TipoFrete;
+use Eloom\SdkBling\Enum\TipoNota;
 use Eloom\SdkBling\Enum\TipoPessoa;
 use Eloom\SdkBling\Model\Request\FormaPagamento;
 use Eloom\SdkBling\Model\Request\Item;
 use Eloom\SdkBling\Model\Request\Nfe;
 use Eloom\SdkBling\Model\Request\NotasFiscaisTransporteVolume;
 use Eloom\SdkBling\Model\Request\Parcela;
-use Eloom\SdkBling\Model\Request\TipoNota;
 
 class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 
@@ -84,6 +85,7 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 				//$nfe->setDataEmissao(new DateTime());
 				$nfe->setDataOperacao(new DateTime());
 				$nfe->setDesconto($this->getExtraAmountValues($order));
+				$nfe->setDespesas($this->getInterestAmount($order));
 
 				/**
 				 * Contato
@@ -91,7 +93,7 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 				$address = $this->getAddress($order);
 
 				$contato = $nfe->getContato();
-				$contato->setContribuinte(2);
+				$contato->setContribuinte(Contribuinte::NAO_CONTRIBUINTE);
 				if (null != $order->getCustomerId()) {
 					$contato->setId($order->getCustomerId());
 				}
@@ -297,7 +299,7 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 					}
 				}
 
-				$this->logger->info($nfe->jsonSerialize());
+				$this->logger->info(json_encode($nfe->jsonSerialize()));
 
 				$response = $bling->nfe()->create($nfe->jsonSerialize());
 				//$this->logger->info($response);
@@ -362,11 +364,39 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 			$discount += $order->getBaseAffiliateplusDiscount();
 		}
 		if ($order->getBaseTaxAmount()) {
-			$addition = $order->getBaseTaxAmount();
+			$addition += $order->getBaseTaxAmount();
 		}
 		$amount = $addition + $discount;
 
 		return abs(round($amount, 2));
+	}
+
+	protected function getInterestAmount($order) {
+		$interest = 0.00;
+		if ($order->getMercadopagoBaseInterestAmount()) {
+			$interest += $order->getMercadopagoBaseInterestAmount();
+		}
+		if ($order->getPagseguroBaseInterestAmount()) {
+			$interest += $order->getPagseguroBaseInterestAmount();
+		}
+		if ($order->getPayuBaseInterestAmount()) {
+			$interest += $order->getPayuBaseInterestAmount();
+		}
+
+		/**
+		 * Outros Métodos de Pagamento
+		 */
+		$payment = $order->getPayment()->getMethodInstance();
+		if ('pagarme_creditcard' == $payment->getCode()) {
+			$transaction = Mage::getModel('pagarme_core/transaction')->load($order->getId(), 'order_id');
+			if ($transaction->payment_method == 'credit_card') {
+				if (null != $transaction->rate_amount && $transaction->rate_amount > 0) {
+					$interest += $transaction->rate_amount;
+				}
+			}
+		}
+
+		return abs(round($interest, 2));
 	}
 
 	public function completeTrackings() {
