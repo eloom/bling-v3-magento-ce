@@ -322,6 +322,9 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 			} catch (\Exception $e) {
 				$this->logger->error(sprintf("Erro ao gerar Nfe, pedido [%s].", $record->getOrderId()));
 				$this->logger->error($e->getMessage());
+
+				$error = sprintf('Pedido [%s] - %s', $order->getIncrementId(), $e->getMessage());
+				Eloom_Bling_Result::getInstance()->addErrorMessage($error);
 			}
 		}
 	}

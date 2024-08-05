@@ -60,6 +60,14 @@ class Eloom_BlingV3_Adminhtml_NfeController extends Mage_Adminhtml_Controller_Ac
 			Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
 		}
 
+		foreach (Eloom_Bling_Result::getInstance()->getSuccessMessages() as $message) {
+			Mage::getSingleton('adminhtml/session')->addSuccess($message);
+		}
+		foreach (Eloom_Bling_Result::getInstance()->getErrorsMessages() as $message) {
+			Mage::getSingleton('adminhtml/session')->addError($message);
+		}
+		Eloom_Bling_Result::getInstance()->reset();
+
 		$this->_redirectReferer();
 	}
 
