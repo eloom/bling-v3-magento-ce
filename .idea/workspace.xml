@@ -6,8 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="6e68afb0-ac1c-4d47-ab89-3589550545f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Cron.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Cron.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Nfe.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Nfe.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/controllers/Adminhtml/NfeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/controllers/Adminhtml/NfeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/etc/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/etc/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-Eloom_BlingV3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build-Eloom_BlingV3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-desenv.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-desenv.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-producao.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-producao.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-test.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-test.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +41,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/eloom/Documents/Projetos/M1/Modulos/General/bling-v3-magento-ce/app/code/local/Eloom/BlingV3/controllers/Adminhtml&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -56,8 +62,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PS-241.18034.69" />
-        <option value="bundled-php-predefined-ba97393d7c68-48a1a656d44e-com.jetbrains.php.sharedIndexes-PS-241.18034.69" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-PS-243.25659.45" />
+        <option value="bundled-php-predefined-a98d8de5180a-1ec7b7818973-com.jetbrains.php.sharedIndexes-PS-243.25659.45" />
       </set>
     </attachedChunks>
   </component>
@@ -188,6 +194,10 @@
       <workItem from="1722878498617" duration="20000" />
       <workItem from="1722879761851" duration="96000" />
       <workItem from="1722881229455" duration="658000" />
+      <workItem from="1722882858642" duration="269000" />
+      <workItem from="1723037822329" duration="356000" />
+      <workItem from="1741263420512" duration="2234000" />
+      <workItem from="1741271670758" duration="1996000" />
     </task>
     <servers />
   </component>

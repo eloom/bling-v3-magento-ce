@@ -49,17 +49,6 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 
 		$config = Mage::getModel('eloom_blingv3/config');
 
-		/**
-		 * Refresh Token
-		 */
-		$bling = Bling::of($config->getApiKey(), $config->getSecretKey(), null);
-		$response = $bling->refreshToken($config->getRefreshToken());
-		$config->saveAccessToken($response->access_token);
-		$config->saveRefreshToken($response->refresh_token);
-
-		/**
-		 * Autentica novamente
-		 */
 		$bling = Bling::of(null, null, $config->getAccessToken());
 
 		$nt = $bling->naturezaOperacoes();
@@ -425,17 +414,6 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 		$offset = 0;
 		$pageValue = 1;
 
-		/**
-		 * Refresh Token
-		 */
-		$bling = Bling::of($config->getApiKey(), $config->getSecretKey(), null);
-		$response = $bling->refreshToken($config->getRefreshToken());
-		$config->saveAccessToken($response->access_token);
-		$config->saveRefreshToken($response->refresh_token);
-
-		/**
-		 * Autentica novamente
-		 */
 		$bling = Bling::of(null, null, $config->getAccessToken());
 
 		for ($i = 0; $i < $num; $i++) {
@@ -510,17 +488,6 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 		$offset = 0;
 		$pageValue = 1;
 
-		/**
-		 * Refresh Token
-		 */
-		$bling = Bling::of($config->getApiKey(), $config->getSecretKey(), null);
-		$response = $bling->refreshToken($config->getRefreshToken());
-		$config->saveAccessToken($response->access_token);
-		$config->saveRefreshToken($response->refresh_token);
-
-		/**
-		 * Autentica novamente
-		 */
 		$bling = Bling::of(null, null, $config->getAccessToken());
 
 		for ($i = 0; $i < $num; $i++) {

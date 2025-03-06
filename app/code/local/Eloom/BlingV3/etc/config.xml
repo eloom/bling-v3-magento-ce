@@ -122,14 +122,22 @@
 
     <crontab>
         <jobs>
-            <eloom_blingv3_nfe_access_key>
+            <eloom_blingv3_refresh_token>
+                <schedule>
+                    <cron_expr>##cron_expr_refreshToken##</cron_expr>
+                </schedule>
+                <run>
+                    <model>eloom_blingv3/cron::refreshToken</model>
+                </run>
+            </eloom_blingv3_refresh_token>
+            <eloom_blingv3_generate_nfe>
                 <schedule>
                     <cron_expr>##cron_expr_sondaNfe##</cron_expr>
                 </schedule>
                 <run>
                     <model>eloom_blingv3/cron::completeNfe</model>
                 </run>
-            </eloom_blingv3_nfe_access_key>
+            </eloom_blingv3_generate_nfe>
             <eloom_blingv3_trackings>
                 <schedule>
                     <cron_expr>##cron_expr_sondaTrackings##</cron_expr>
