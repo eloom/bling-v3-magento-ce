@@ -315,6 +315,7 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 				$error = sprintf('Pedido [%s] - %s', $order->getIncrementId(), $e->getMessage());
 				Eloom_Bling_Result::getInstance()->addErrorMessage($error);
 			}
+			usleep(1000);
 		}
 	}
 
@@ -461,6 +462,7 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 							$this->logger->error($e->getMessage());
 						}
 					}
+					usleep(1000);
 				} catch (Exception $e) {
 					$this->logger->error($e->getMessage());
 				}
@@ -524,6 +526,7 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 							$record->save();
 						}
 					}
+					usleep(1000);
 				} catch (Exception $e) {
 					$this->logger->error($e->getMessage());
 				} finally {
