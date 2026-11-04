@@ -21,7 +21,7 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 	const ATTR_NCM = 'nfe_ncm';
 	const ATTR_CEST = 'nfe_cest';
 	const ATTR_GTIN = 'nfe_gtin';
-
+  const DELAY = 1000000;
 	private $logger;
 
 	/**
@@ -315,7 +315,7 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 				$error = sprintf('Pedido [%s] - %s', $order->getIncrementId(), $e->getMessage());
 				Eloom_Bling_Result::getInstance()->addErrorMessage($error);
 			}
-			usleep(1000);
+      usleep(self::DELAY);
 		}
 	}
 
@@ -462,10 +462,10 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 							$this->logger->error($e->getMessage());
 						}
 					}
-					usleep(1000);
 				} catch (Exception $e) {
 					$this->logger->error($e->getMessage());
 				}
+        usleep(self::DELAY);
 			}
 
 			$pageValue++;
@@ -526,7 +526,6 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 							$record->save();
 						}
 					}
-					usleep(1000);
 				} catch (Exception $e) {
 					$this->logger->error($e->getMessage());
 				} finally {
@@ -535,6 +534,7 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
 						Mage::dispatchEvent('eloom_marketplace_nfe_save', array('order_id' => $record->getOrderId(), 'nfe_number' => $record->getNfeNumber(), 'nfe_access_key' => $record->getNfeAccessKey()));
 					}
 				}
+        usleep(self::DELAY);
 			}
 
 			$pageValue++;

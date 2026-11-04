@@ -7,6 +7,7 @@
     <list default="true" id="6e68afb0-ac1c-4d47-ab89-3589550545f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Nfe.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Nfe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-producao.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-producao.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,10 +16,90 @@
   </component>
   <component name="ComposerSettings" notifyAboutMissingVendor="false" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <execution />
+    </execution>
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "eloom"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/eloom/bling-v3-magento-ce.git",
+    "accountId": "a631f530-dbc1-46ff-b2ae-93faed3198cf"
+  }
+}]]></component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="3.9082837432174896E-76" />
+      <entry key="S2" value="1.4060362625178122E-19" />
+      <entry key="S5" value="2.878734269039269E-8" />
+      <entry key="S10" value="1.7041140498033643E-4" />
+      <entry key="S30" value="0.0917910759742052" />
+      <entry key="S60" value="1.732441123115727" />
+      <entry key="M2" value="12.150504464903701" />
+      <entry key="M5" value="42.20896528581252" />
+      <entry key="M10" value="64.49275202142988" />
+      <entry key="M15" value="74.35541139521584" />
+      <entry key="M30" value="85.77256318469428" />
+      <entry key="H1" value="92.14232589148149" />
+      <entry key="H2" value="95.507802648063" />
+      <entry key="H4" value="97.23775394077234" />
+      <entry key="D1" value="98.70402302311788" />
+      <entry key="W1" value="98.95766164946163" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0" />
+      <entry key="S30" value="1.0" />
+      <entry key="S60" value="1.0" />
+      <entry key="M2" value="1.0" />
+      <entry key="M5" value="1.0" />
+      <entry key="M10" value="1.0" />
+      <entry key="M15" value="1.0" />
+      <entry key="M30" value="1.0" />
+      <entry key="H1" value="1.0" />
+      <entry key="H2" value="1.0" />
+      <entry key="H4" value="1.0" />
+      <entry key="D1" value="1.0" />
+      <entry key="W1" value="1.0" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="1.0567546601188081E-5" />
+      <entry key="MS500" value="0.10111016854521736" />
+      <entry key="S2" value="0.5638956035348152" />
+      <entry key="S5" value="0.7952057190171768" />
+      <entry key="S10" value="0.8918880049583222" />
+      <entry key="S30" value="1.0512920953306057" />
+      <entry key="S60" value="2.706442761055718" />
+      <entry key="M2" value="13.132743562128505" />
+      <entry key="M5" value="43.19928589914584" />
+      <entry key="M10" value="65.48721539728531" />
+      <entry key="M15" value="75.35153306876249" />
+      <entry key="M30" value="86.77052018604554" />
+      <entry key="H1" value="93.14127625706607" />
+      <entry key="H2" value="96.50727049855801" />
+      <entry key="H4" value="98.23748599379311" />
+      <entry key="D1" value="99.70397810184308" />
+      <entry key="W1" value="99.95765522563978" />
+    </decayedShown>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/usr/bin/php" />
   <component name="ProjectColorInfo">{
@@ -32,20 +113,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/eloom/Documents/Projetos/M1/Modulos/General/bling-v3-magento-ce/app/code/local/Eloom/BlingV3/controllers/Adminhtml&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/rodrigo/Documentos/Projetos/M1/bling-v3-magento-ce",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/controllers/Adminhtml" />
@@ -56,8 +141,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-PS-243.25659.45" />
-        <option value="bundled-php-predefined-a98d8de5180a-1ec7b7818973-com.jetbrains.php.sharedIndexes-PS-243.25659.45" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-PS-262.11879.104" />
+        <option value="bundled-php-predefined-a98d8de5180a-9522f28f0b20-com.jetbrains.php.sharedIndexes-PS-262.11879.104" />
       </set>
     </attachedChunks>
   </component>
@@ -194,6 +279,7 @@
       <workItem from="1741271670758" duration="2086000" />
       <workItem from="1741607675808" duration="802000" />
       <workItem from="1741624786836" duration="360000" />
+      <workItem from="1793798400933" duration="1878000" />
     </task>
     <servers />
   </component>
