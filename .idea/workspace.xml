@@ -7,7 +7,6 @@
     <list default="true" id="6e68afb0-ac1c-4d47-ab89-3589550545f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Nfe.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/Model/Service/Nfe.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-producao.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-producao.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +16,11 @@
   <component name="ComposerSettings" notifyAboutMissingVendor="false" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
-      <execution />
+      <execution>
+        <execution>
+          <execution />
+        </execution>
+      </execution>
     </execution>
   </component>
   <component name="EmbeddingIndexingInfo">
@@ -26,79 +29,79 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "eloom"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;eloom&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/eloom/bling-v3-magento-ce.git",
-    "accountId": "a631f530-dbc1-46ff-b2ae-93faed3198cf"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/eloom/bling-v3-magento-ce.git&quot;,
+    &quot;accountId&quot;: &quot;a631f530-dbc1-46ff-b2ae-93faed3198cf&quot;
   }
-}]]></component>
+}</component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="3.9082837432174896E-76" />
-      <entry key="S2" value="1.4060362625178122E-19" />
-      <entry key="S5" value="2.878734269039269E-8" />
-      <entry key="S10" value="1.7041140498033643E-4" />
-      <entry key="S30" value="0.0917910759742052" />
-      <entry key="S60" value="1.732441123115727" />
-      <entry key="M2" value="12.150504464903701" />
-      <entry key="M5" value="42.20896528581252" />
-      <entry key="M10" value="64.49275202142988" />
-      <entry key="M15" value="74.35541139521584" />
-      <entry key="M30" value="85.77256318469428" />
-      <entry key="H1" value="92.14232589148149" />
-      <entry key="H2" value="95.507802648063" />
-      <entry key="H4" value="97.23775394077234" />
-      <entry key="D1" value="98.70402302311788" />
-      <entry key="W1" value="98.95766164946163" />
+      <entry key="MS100" value="1.0006267216134077" />
+      <entry key="MS500" value="1.2723188124591172" />
+      <entry key="S2" value="2.4310524892900776" />
+      <entry key="S5" value="3.2072325685110115" />
+      <entry key="S10" value="3.6666261214972753" />
+      <entry key="S30" value="4.583734186475839" />
+      <entry key="S60" value="5.154103801237997" />
+      <entry key="M2" value="6.259144013003288" />
+      <entry key="M5" value="18.799397809270506" />
+      <entry key="M10" value="42.26857227420706" />
+      <entry key="M15" value="57.44491816742203" />
+      <entry key="M30" value="79.08616291270611" />
+      <entry key="H1" value="93.16566883937364" />
+      <entry key="H2" value="101.20662888849394" />
+      <entry key="H4" value="105.50495547297821" />
+      <entry key="D1" value="109.2367830527428" />
+      <entry key="W1" value="109.89062000739816" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0" />
-      <entry key="S30" value="1.0" />
-      <entry key="S60" value="1.0" />
-      <entry key="M2" value="1.0" />
-      <entry key="M5" value="1.0" />
-      <entry key="M10" value="1.0" />
-      <entry key="M15" value="1.0" />
-      <entry key="M30" value="1.0" />
-      <entry key="H1" value="1.0" />
-      <entry key="H2" value="1.0" />
-      <entry key="H4" value="1.0" />
-      <entry key="D1" value="1.0" />
-      <entry key="W1" value="1.0" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="5.670852393285E-312" />
+      <entry key="S2" value="1.5431641054573832E-78" />
+      <entry key="S5" value="7.515096772283055E-32" />
+      <entry key="S10" value="2.8388296329017746E-16" />
+      <entry key="S30" value="8.643829485919654E-6" />
+      <entry key="S60" value="0.0040144573803502755" />
+      <entry key="M2" value="0.08877057156224843" />
+      <entry key="M5" value="0.5740299490611611" />
+      <entry key="M10" value="1.0710664747754628" />
+      <entry key="M15" value="1.3188155858867607" />
+      <entry key="M30" value="1.6240095964357038" />
+      <entry key="H1" value="1.8022070429172141" />
+      <entry key="H2" value="1.898524414275975" />
+      <entry key="H4" value="1.9486004693901031" />
+      <entry key="D1" value="1.9913400275303592" />
+      <entry key="W1" value="1.998760554622537" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.0567546601188081E-5" />
-      <entry key="MS500" value="0.10111016854521736" />
-      <entry key="S2" value="0.5638956035348152" />
-      <entry key="S5" value="0.7952057190171768" />
-      <entry key="S10" value="0.8918880049583222" />
-      <entry key="S30" value="1.0512920953306057" />
-      <entry key="S60" value="2.706442761055718" />
-      <entry key="M2" value="13.132743562128505" />
-      <entry key="M5" value="43.19928589914584" />
-      <entry key="M10" value="65.48721539728531" />
-      <entry key="M15" value="75.35153306876249" />
-      <entry key="M30" value="86.77052018604554" />
-      <entry key="H1" value="93.14127625706607" />
-      <entry key="H2" value="96.50727049855801" />
-      <entry key="H4" value="98.23748599379311" />
-      <entry key="D1" value="99.70397810184308" />
-      <entry key="W1" value="99.95765522563978" />
+      <entry key="MS100" value="0.8711232812136176" />
+      <entry key="MS500" value="1.2399996849405737" />
+      <entry key="S2" value="2.416755363210669" />
+      <entry key="S5" value="3.1994918042657727" />
+      <entry key="S10" value="3.659461628055548" />
+      <entry key="S30" value="4.573514647031619" />
+      <entry key="S60" value="5.149489180937473" />
+      <entry key="M2" value="6.339521917151312" />
+      <entry key="M5" value="19.363294172559176" />
+      <entry key="M10" value="43.33106149495916" />
+      <entry key="M15" value="58.75681380139304" />
+      <entry key="M30" value="80.70595541051449" />
+      <entry key="H1" value="94.96554197867158" />
+      <entry key="H2" value="103.10392478766818" />
+      <entry key="H4" value="107.45292558998813" />
+      <entry key="D1" value="111.22801572385991" />
+      <entry key="W1" value="111.88936516829045" />
     </decayedShown>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/usr/bin/php" />
@@ -113,24 +116,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/rodrigo/Documentos/Projetos/M1/bling-v3-magento-ce",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/rodrigo/Documentos/Projetos/M1/pagarme-magento&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/code/local/Eloom/BlingV3/controllers/Adminhtml" />
@@ -279,7 +282,9 @@
       <workItem from="1741271670758" duration="2086000" />
       <workItem from="1741607675808" duration="802000" />
       <workItem from="1741624786836" duration="360000" />
-      <workItem from="1793798400933" duration="1878000" />
+      <workItem from="1793798400933" duration="2875000" />
+      <workItem from="1793802316562" duration="712000" />
+      <workItem from="1793807107783" duration="942000" />
     </task>
     <servers />
   </component>
