@@ -269,7 +269,7 @@ class Eloom_BlingV3_Model_Service_Nfe extends Mage_Core_Model_Abstract {
               $parcela->setData(new \DateTime($paymentDay));
             }
             if ($paymentMethod->getAmount()) {
-              $parcela->setValor($paymentMethod->getAmount());
+              //$parcela->setValor($paymentMethod->getAmount());
             }
             if ($paymentMethod->getMethod()) {
               $formasPagamento = $bling->paymentMethods()->findAll(0, 20, ['descricao' => $paymentMethod->getMethod()])->toArray();
